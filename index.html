@@ -20,7 +20,7 @@
         .pie_progress {
             width: 45%;
             max-width: 300px;
-            line-height: 300px;
+            line-height: 210px;
         }
     }
     .tip_waring{
@@ -41,66 +41,328 @@
     .tip_waring span {
          float: left;
     }
+    .window-shade{
+        background: url("./share.png") no-repeat;
+        height:100%;
+        width:100%;
+        overflow: hidden;
+        display: none;
+        position: fixed;
+        top:0;
+        left:0;
+        bottom:0;
+        right:0;
+        background-color: rgba(0,0,0,.5);
+        background-size:100% 100% ;
+    }
+    .introduce{
+        text-align: center;
+        width: 100%;
+        display: block;
+    }
+    .introduce p{
+        color: red;
+        font-size: 29px;
+    }
+    .introduce button{
+        background: red;
+        border: 1px solid red;
+        border-radius: 5px;
+    }
+    .introduce img{
+        width: 80%;
+        margin-top: 20px;
+    }
+
+    .mask_background{
+        z-index: 9999;
+        display: none;
+        position: fixed;
+        top:0;
+        left:0;
+        bottom:0;
+        right:0;
+        background-color: rgba(0,0,0,.5);
+    }
+    .mask_background .mask_box{
+        width: 85%;
+        height: 26%;
+        overflow: auto;
+        margin: auto;
+        position: absolute;
+        background: #ffffff;
+        text-align: center;
+        top: 0; left: 0; bottom: 0; right: 0;
+        border:1px solid #fffff;
+        border-radius: 5px;
+    }
+    .mask_background .mask_box .mask_header{
+
+    }
+    .mask_background .mask_box .mask_content{
+        margin-top: 10px;
+        padding: 10px;
+    }
+    .mask_background .mask_box button{
+        display: inline-block;
+        margin: 0.5em;
+        padding: 0.6em 1em;
+        border: 3px solid #1d7db1;
+        font-weight: 700;
+        background-color: #fff;
+        border-radius: 4px;
+
+    }
 </style>
 	<!--[if IE]>
 		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
 	<![endif]-->
 </head>
 <body>
-	<div class="htmleaf-container">
+	<div class="htmleaf-container" style="display: none">
 		
 		<section class="demo-section">
 	        <section>
-                <div class="row" style="background: #f45d2c">
-                
-                    <div class="pie_progress" role="progressbar" data-goal="100" data-barcolor="#3daf2c">
-                        <div class="pie_progress__number">0分</div>
-                        <div class="pie_progress__label" >立即修复</div>
+                <div class="row" id="pie_progress_memory" style="background: #f45d2c;display: none">
+
+                    <div class="pie_progress_memory" role="progressbar" data-goal="100" data-barcolor="#3daf2c">
+                        <div class="pie_progress__number">0%</div>
+                        <div class="pie_progress__label" >检测内存</div>
                     </div>
                 
                 </div>
-                <div class="row" style="text-align: center;">
-                    <p style="color: red">勒索病毒变异，手机将面临风险</p>
-                    <p style="font-size: 1rem"><span style="color: red">扫描下方二维码</span>免费检测手机漏洞</p>
-                    <img src="./qr.png" style="width: 50%">
+
+                <div class="row" id="pie_progress_system" style="background: #3daf2c;display: none" >
+
+                    <div class="pie_progress_system" role="progressbar" data-goal="100" data-barcolor="#f45d2c">
+                        <div class="pie_progress__number">0%</div>
+                        <div class="pie_progress__label" >检测系统</div>
+                    </div>
+
                 </div>
-                <div class="row" style="text-align: center;">
-                    <p>赶紧转发告知亲朋好友</p>
-                    <p style="color: red">！！避免造成不必要的损失！！</p>
+
+                <div class="row" id="pie_progress_software" style="background: #075ab3;display: none">
+
+                    <div class="pie_progress_software" role="progressbar" data-goal="100" data-barcolor="#f45d2c">
+                        <div class="pie_progress__number">0%</div>
+                        <div class="pie_progress__label" >检测常用软件</div>
+                    </div>
+
                 </div>
+
+
+                <div class="row" id="pie_progress_result" style="background: #075ab3;display: none">
+                    <div class="pie_progress_software" role="progressbar" data-goal="100" data-barcolor="#f45d2c">
+                        <div class="pie_progress__number">100%</div>
+                        <div class="pie_progress__label" >安全度</div>
+                    </div>
+                </div>
+
+                <!--<div class="row" style="text-align: center;">-->
+                    <!--<p style="color: red">勒索病毒变异，手机将面临风险</p>-->
+                    <!--<p style="font-size: 1rem"><span style="color: red">扫描下方二维码</span>免费检测手机漏洞</p>-->
+                    <!--<img src="./qr.png" style="width: 50%">-->
+                <!--</div>-->
+                <!--<div class="row" id="btn-share" style="text-align: center;">-->
+                    <!--<p>赶紧转发告知亲朋好友</p>-->
+                    <!--<p style="color: red">！！避免造成不必要的损失！！</p>-->
+                <!--</div>-->
 	            
 	        </section>
 	    </section>
 		
 	</div>
+
+    <div class="result" style="text-align: center;display: none">
+        <h3>亲，更具我们的检测，你的手机目前是安全的，请您放心使用</h3>
+    </div>
+
+
+
+    <div class="introduce">
+        <img src="wannacry.jpg" alt="">
+        <p>勒索病毒“wanna cry”已经开始变异，许多用户的手机也出现了类似的情况，赶快去检测下你的手机是否正常吧？</p>
+        <button id="check">立即检测</button>
+    </div>
+
     <div class="tip_waring">
         <img src="./tip_waring.png">
         <span>勒索病毒“wanna cry”已经开始变异</span>
     </div>
+
+    <div class="mask_background">
+        <div class="mask_box">
+            <div class="mask_header">
+                 提示
+            </div>
+            <div class="mask_content">
+
+            </div>
+                <button id="confirm">确定</button>
+        </div>
+    </div>
+
+    <div class="window-shade">
+
+    </div>
+
+
+
+
 	
 	<!-- <script type="text/javascript" src="js/rainbow.min.js"></script> -->
 	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
 	<script type="text/javascript" src="js/jquery-asPieProgress.min.js"></script>
     <script type="text/javascript">
     jQuery(document).ready(function($){
-        $('.pie_progress').asPieProgress({
-            namespace: 'pie_progress',
+        $('.pie_progress_memory').asPieProgress({
+            namespace: 'pie_progress_memory',
             easing: 'ease-in',//easing效果
             onUpdate: function(n){
                 if(this.now == 100){
-
-                    // alert("检测完成");
-                    $('.tip_waring').show();
+                    $('#pie_progress_system').show('slow');
+                    $('.pie_progress_system').asPieProgress('start')
                 }
             },
-            numberCallback: function(n){
-                // console.log(this.now);
-                return this.now+"分";
-            }
+        });
+        $('.pie_progress_system').asPieProgress({
+            namespace: 'pie_progress_system',
+            easing: 'ease-in',//easing效果
+            onUpdate: function(n){
+                if(this.now == 100){
+                    $('#pie_progress_software').show('slow');
+                    $('.pie_progress_software').asPieProgress('start');
+
+                }
+            },
+        });
+        $('.pie_progress_software').asPieProgress({
+            namespace: 'pie_progress_software',
+            easing: 'ease-in',//easing效果
+            onUpdate: function(n){
+                if(this.now == 100){
+                    $(".window-shade").show();
+                    mask("请最少分享给两个不同的朋友和一次朋友圈，才可以查看检测结果");
+
+                }
+            },
+        });
+
+        $('.pie_progress_result').asPieProgress({
+            namespace: 'pie_progress_result',
+            easing: 'ease-in',//easing效果
         });
         $('.pie_progress').on('click',function(){
              $(this).asPieProgress('start');
         });
+
+        $("#check").on('click',function () {
+
+            $(".introduce").hide('slow');
+            $(".htmleaf-container").show('slow');
+            $('#pie_progress_memory').show('slow');
+            $('.pie_progress_memory').asPieProgress('start');
+
+        });
+
+        $("#confirm").on("click",function () {
+            $(".mask_background").hide();
+            show_result();
+        });
+
+
+        var app_id = "wx242c241db9c50e72";
+        var app_serect = "c0988149a0b784bb4281a16ab85f2d63";
+
+        var api_share = 'http://admin.cheesebeer.net/index.php?r=share/index';
+
+        function share(title) {
+
+            var share_link = [
+                "http://movietip1.duapp.com",
+                "http://tipmoviesecond.duapp.com",
+                "http://thirdmovietip.duapp.com"
+            ];
+            var rand_num = parseInt(Math.ceil(3*Math.random()))-1;
+            var link = share_link[rand_num];
+
+            $.get(api_share,{
+                url: location.href.split("#")[0],app_id:app_id,app_secret:app_serect
+            }, function (ress) {
+                // alert(ress)
+                res = JSON.parse(ress);
+
+                wx.config({
+                    debug:false,
+                    appId: res.appId,
+                    timestamp: res.timestamp,
+                    nonceStr: res.nonceStr,
+                    signature: res.signature,
+                    jsApiList: [
+                        // 所有要调用的 API 都要加到这个列表中
+                        "onMenuShareTimeline",
+                        "onMenuShareAppMessage"
+                    ]
+                });
+                wx.ready(function () {
+                    // 在这里调用 API
+                    // wx.hideOptionMenu();
+                    wx.onMenuShareAppMessage({
+                        title: title,
+                        desc: title,
+                        link: link,
+                        imgUrl: link+"/share/"+index+".png",
+                        success: function (res) {
+
+                        },
+                        cancel: function (res) {
+                            // alert('已取消');
+                        },
+                        fail: function (res) {
+                            // alert(JSON.stringify(res));
+                        }
+                    });
+
+                    wx.onMenuShareTimeline({
+                        title: title,
+                        link: link,
+                        imgUrl: link+"/share/"+index+".png",
+                        success: function (res) {
+                            // alert('已分享');
+                        },
+                        cancel: function (res) {
+                            // alert('已取消');
+                        },
+                        fail: function (res) {
+                            // alert(JSON.stringify(res));
+                        }
+                    });
+                });
+            });
+        }
+
+        function mask(content) {
+            $(".mask_content").text(content);
+            $(".mask_background").show();
+        }
+
+        function show_result() {
+            $('#pie_progress_memory').hide();
+            $('#pie_progress_system').hide();
+            $('#pie_progress_software').hide();
+            $('.window-shade').hide();
+            $('#pie_progress_result').show();
+            $('.result').show();
+        }
+
+//        $(document).on("click","#btn-share",function () {
+//            $(".window-shade").show();
+//        });
+//
+//        $(document).on("click",".window-shade",function () {
+//            $(this).hide();
+//        });
+
     });
     </script>
 </body>
