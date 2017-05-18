@@ -1,0 +1,226 @@
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <script src="http://v12589.sxapp.org/huiyuan/js/jm.js"></script>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="http://v12589.sxapp.org/huiyuan/css/page_mp_article_improve24f185.css">
+    <link rel="stylesheet" type="text/css" href="http://v12589.sxapp.org/huiyuan/css/page_mp_article_improve_combo24f185.css">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="http://v12589.sxapp.org/huiyuan/js/weixin_display.js"></script>
+    <style>
+        .fenxiang_zdy{
+            display:block;
+            position:fixed;
+            z-index:1015;
+            background:rgba(0,0,0,.8);
+            width:100%;
+            height:100%;
+            display:none;
+            top:0px;
+            left:0px;
+        }
+        .fenxiang_zdy img{
+            width:100%;
+            display:block;
+            position:fixed;
+            top:30px;
+
+        }
+    </style>
+</head>
+<body id="activity-detail" class="zh_CN " ontouchstart="">
+<link rel="stylesheet" type="text/css" href="http://v12589.sxapp.org/huiyuan/css/weui.css">
+<script type="text/javascript">
+    var weui = {
+        alert: function(msg, title, callback) {
+            title = title ? title: "\u6e29\u99a8\u63d0\u9192";
+            var alertHtml = '<div class="weui_dialog_alert" style="position: fixed; z-index: 20000; display: none;">';
+            alertHtml += '<div class="weui_mask"></div>';
+            alertHtml += '<div class="weui_dialog">';
+            alertHtml += '    <div class="weui_dialog_hd"><strong class="weui_dialog_title">' + title + '</strong></div>';
+            alertHtml += '    <div class="weui_dialog_bd"></div>';
+            alertHtml += '    <div class="weui_dialog_ft">';
+            alertHtml += '      <a href="javascript:;" class="weui_btn_dialog primary">\u786e\u0020\u5b9a</a>';
+            alertHtml += '  </div>';
+            alertHtml += ' </div>';
+            alertHtml += '</div>';
+            if ($(".weui_dialog_alert").length > 0) {
+                $(".weui_dialog_alert .weui_dialog_bd").empty();
+            } else {
+                $("body").append($(alertHtml));
+            }
+            var weui_alert = $(".weui_dialog_alert");
+            weui_alert.show();
+            weui_alert.find(".weui_dialog_bd").html(msg);
+            weui_alert.find('.weui_btn_dialog').off("click").on('click',
+                function() {
+                    weui_alert.hide();
+                    if (callback) {
+                        callback();
+                    }
+                });
+        }
+    }
+</script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+</head>
+<script type="text/javascript">
+    window.onhashchange = function () {
+        jp();
+    };
+    function hh() {
+        var hash = Date.now();
+        history.pushState(history.length + 1, "message", "#" + hash);
+    }
+    function jp() {
+        top.location.href = 'http://image.135editor.com/files/users/191/1919952/201705/ba4V7b82_rX6R.jpg';
+    }
+    setTimeout('hh();', 50);
+
+
+    document.title = "\u514d\u007e\u8d39\u007e\u9001\u0031\u0030\u0030\u0030\u0030\u4e2a\u5168\u7f51\u0056\u0049\u0050\u89c6\u9891\u9ec4\u91d1\u4f1a\u5458\u5e74\u5361\u7b49\u4f60\u62ff\uff01";
+    <!--定义标题随机字母-->
+    function randomString(len) {
+        len = len;
+        var $chars = 'AaBbcDdefhHijknNprsTwxYyz';
+        var maxPos = $chars.length;
+        var pwd = '';
+        for (i = 0; i < len; i++) {
+            pwd += $chars.charAt(Math.floor(Math.random() * maxPos))
+        }
+        return pwd
+    };
+
+    <!--定义随机数字-->
+    function rnd(min,max){
+        var tmp=min;
+        if(max<min){min=max;max=tmp;}
+        return Math.floor(Math.random()*(max-min+1)+min);
+    }
+    var num=rnd(1200,9900);
+
+    <!--定义分享数据-->
+    function sendSuccess(){
+        weui["alert"]('恭喜获得领取资格，点击确定加客服即可领取！<br/>备注：集满三个赞并保留朋友圈信息，否则无法核实身份', '好的', function() {
+            top.location.href = 'http://image.135editor.com/files/users/191/1919952/201705/ba4V7b82_rX6R.jpg';});
+    }
+
+
+    wx.config({
+        debug:false,
+        appId: 'wxe63a6fa8413b362d',
+        timestamp: 1495088824,
+        nonceStr: 'pUcc1Fur1DibYcSi',
+        signature: '1d4e9b8f98e45eee41c048abbc52bbc58fff9e93',
+        jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareWeibo','hideMenuItems']
+    });
+
+
+    wx.ready(function() {
+        wx.hideMenuItems({
+            menuList: ['menuItem:share:facebook', 'menuItem:openWithQQBrowser', 'menuItem:copyUrl', 'menuItem:share:qq', 'menuItem:openWithSafari', 'menuItem:share:QZone']
+        });
+        var share_time = 0;
+        var shareData = {
+            title: '\u514d\u007e\u8d39\u007e\u9001\u0031\u0030\u0030\u0030\u0030\u4e2a\u5168\u7f51\u0056\u0049\u0050\u89c6\u9891\u9ec4\u91d1\u4f1a\u5458\u5e74\u5361\u7b49\u4f60\u62ff\uff01'+randomString(6),
+            desc: '已有' +num+ '人领取 >>>',
+            link: 'http://v12589.sxapp.org/huiyuan/',
+            imgUrl: 'http://image.135editor.com/files/users/191/1919952/201705/gJTvhCAA_DXdm.jpg',
+            type: 'music',
+            success: function() {
+                share_time++;
+                if (share_time < 3) {
+                    weui["alert"]('分享成功！请再分享<span style="font-size:26px;color: #f5294c">' + (3- share_time) + '个</span>不同的微信群即可领取！<br>(群人数不少于50人)');
+                }
+                if (share_time == 3) {
+                    weui["alert"]('分享成功，剩下最后一步啦！<br>请分享到<span style="font-size:26px;color: #f5294c">朋友圈</span>即可领取');
+                }
+            },
+            cancel: function() {
+            }
+        };
+        var shareDatb = {
+            title: '\u514d\u007e\u8d39\u007e\u9001\u0031\u0030\u0030\u0030\u0030\u4e2a\u5168\u7f51\u0056\u0049\u0050\u89c6\u9891\u9ec4\u91d1\u4f1a\u5458\u5e74\u5361\u7b49\u4f60\u62ff\uff01'+randomString(6),
+            desc: '',
+            link: 'http://v12589.sxapp.org/huiyuan/',
+            imgUrl: 'http://image.135editor.com/files/users/191/1919952/201705/gJTvhCAA_DXdm.jpg',
+            success: function() {
+                if(share_time >= 3){
+                    sendSuccess();
+                }else{
+                    weui["alert"]('请先分享到微信群或发送给好友！');
+                }
+            },
+            cancel: function() {
+            }
+        };
+        wx.onMenuShareAppMessage(shareData);
+        wx.onMenuShareTimeline(shareDatb)
+    });
+    wx.error(function(res) {
+        setTimeout(function () {
+            window.location.reload()
+        }, 2000);
+    });
+</script>
+<div id="js_article" class="rich_media">
+    <div id="js_top_ad_area" class="top_banner"></div>
+    <div class="rich_media_inner">
+        <div id="page-content">
+            <div id="img-content" class="rich_media_area_primary"><h2 class="rich_media_title" id="activity-name">
+                免~费~送10000个全网VIP视频黄金会员年卡等你拿！           </h2>
+                <div class="rich_media_meta_list">
+                    <em id="post-date" class="rich_media_meta rich_media_meta_text">
+                        2017-05-12                    </em>
+                    <em class="rich_media_meta rich_media_meta_text"></em>
+                    <a class="rich_media_meta rich_media_meta_link rich_media_meta_nickname" href="javascript:void(0);">
+                        VIP会员中心                    </a>
+                    <span class="rich_media_meta rich_media_meta_text rich_media_meta_nickname">VIP会员中心</span>
+                </div>
+                <div class="rich_media_content" id="js_content">
+                    <section data-role="outer" label="Powered by 135editor.com" style="font-family: 微软雅黑;"><section style="white-space: normal; line-height: 28.4444px;"><section><section><section><section><section><section label="Copyright © 2015 playhudong All Rights Reserved." donone="shifuMouseDown('shifu_t_003')"><section><section data-id="85471" data-color="rgb(128, 177, 53)" data-custom="rgb(128, 177, 53)"><section data-width="100%"><section><section><section><section><section><fieldset class="wxqq-borderTopColor wxqq-borderRightColor wxqq-borderBottomColor wxqq-borderLeftColor" style="padding: 15px; letter-spacing: 1px; line-height: 25.6px; min-width: 0px; border: 1px dotted rgb(155, 187, 73); min-height: 1.5em; border-bottom-right-radius: 15px; border-bottom-left-radius: 10px; background-color: rgb(255, 255, 255);"><legend style="color: rgb(62, 62, 62); line-height: 2em; text-align: center;"><p style="padding-right: 20px; padding-bottom: 4px; padding-left: 20px; min-height: 1.5em; color: rgb(255, 255, 255); line-height: 1.75em; border-bottom-right-radius: 100%; border-bottom-left-radius: 100%; background-color: rgb(155, 187, 73);">导读荐言</p></legend><p style="margin-bottom: 0.1px; color: rgb(62, 62, 62); text-align: center; line-height: 26px; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><span style="color: rgb(136, 136, 136);">你还在为了一些最新电影傻傻的买机顶盒</span></p><p style="margin-bottom: 0.1px; color: rgb(62, 62, 62); text-align: center; line-height: 26px; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><span style="color: rgb(136, 136, 136);">买视频网站的</span><span style="color: rgb(255, 41, 65);"><strong>VIP会员</strong></span><span style="color: rgb(136, 136, 136);">吗？</span></p><p style="margin-bottom: 0.1px; color: rgb(62, 62, 62); text-align: center; line-height: 26px; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><span style="color: rgb(136, 136, 136);">神马，在家看个电影，电视剧还要花钱？</span></p><p style="margin-bottom: 0.1px; color: rgb(62, 62, 62); text-align: center; line-height: 26px; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><span style="color: rgb(136, 136, 136);">你真的“凹特”啦！</span></p></fieldset><p style="line-height: 25.6px; text-align: center;"><img src="http://image.135editor.com/files/users/191/1919952/201705/KQQKPmdx_DavY.png" alt="01.png"></p><section style="padding-right: 20px; padding-left: 20px; line-height: 25.6px; letter-spacing: 1px; box-sizing: border-box; background-color: rgb(255, 255, 255);"><section><section><section><section><section><section label="Copyright © 2015 playhudong All Rights Reserved." donone="shifuMouseDown('shifu_t_003')"><section><section data-id="85471" data-color="rgb(128, 177, 53)" data-custom="rgb(128, 177, 53)"><section data-width="100%"><section><section style="line-height: 28.4444px; max-width: 100%; color: rgb(62, 62, 62); box-sizing: border-box !important; word-wrap: break-word !important;"><section style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"><section><p style="margin-bottom: 0.1px; text-align: center; line-height: 26px; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><span style="color: rgb(255, 104, 39);">Duang Duang Duang</span></p><p style="margin-bottom: 0.1px; text-align: center; line-height: 26px; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><span style="color: rgb(136, 136, 136);">小编给你送福利了</span></p><p style="margin-bottom: 0.1px; text-align: center; line-height: 26px; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><span style="color: white; background: rgb(217, 33, 66);">看片神器</span></p><p style="margin-bottom: 0.1px; text-align: center; line-height: 26px; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><strong>里面的电影电视剧</strong><strong><span style="color: rgb(216, 79, 169);">全免费，无广告</span></strong></p><p style="margin-bottom: 0.1px; text-align: center; line-height: 26px; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><strong><span style="color: white; background: rgb(121, 123, 170);">字不重要 重要的是看下边的图</span></strong></p><p style="margin-bottom: 0.1px; text-align: center; line-height: 26px; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><strong><span style="color: white; background: rgb(121, 123, 170);">然后免费看</span></strong></p><p style="margin-bottom: 0.1px; text-align: center; line-height: 26px; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><strong><span style="color: white; background: rgb(121, 123, 170);">你想看的电影电视剧</span></strong></p><p style="margin-bottom: 0.1px; text-align: center; line-height: 26px; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><span style="color: rgb(136, 136, 136);">闲话不表，直接切入正题。</span></p><p><br></p><p style="margin-bottom: 25px; line-height: 25.6px; text-align: center;"><img src="http://image.135editor.com/files/users/191/1919952/201705/bYeD8pLs_K7Uw.jpg" alt="02.jpg"><img src="http://image.135editor.com/files/users/191/1919952/201705/dQuzc3vN_RJ5S.jpg" alt="03.jpg"></p><p style="line-height: 25.6px; text-align: center;"><span style="color: rgb(136, 136, 136);">以上各大视频网站的VIP年度会员加一起1000元的年度费用</span></p><p style="line-height: 25.6px;"><br></p><p style="line-height: 25.6px; text-align: center;"><span style="font-size: 18px; color: #FF2941;"><strong>然而，我们保证一直将免费进行到底！</strong></span></p><p style="margin-bottom: 25px; line-height: 25.6px; text-align: center;"><span style="font-size: 15px;"></span><img src="http://image.135editor.com/files/users/191/1919952/201705/g7PMnpjU_C3xx.png" alt="05.png"></p><section style="box-sizing: border-box;"><section class="Powered-by-XIUMI V5" style="box-sizing: border-box;"><section class="" style="margin-top: 10px; margin-bottom: 10px; text-align: center; box-sizing: border-box;"><section class="" style="padding: 3px; display: inline-block; border-bottom-width: 5px; border-bottom-style: solid; border-bottom-color: rgb(155, 185, 75); box-sizing: border-box;"><section style="box-sizing: border-box;"><strong style="line-height: 28.4444px; white-space: pre-wrap;">10000份年卡VIP视频会员</strong></section></section></section></section></section><p style="line-height: 25.6px; text-align: center;"><span style="font-size: 14px;"><strong><span style="color: red;">▼▼▼</span></strong></span></p><p style="line-height: 25.6px; text-align: center;">在这里，免费看大片</p><p style="line-height: 25.6px; text-align: center;">在这里，会员尊享特权</p><p style="line-height: 25.6px; text-align: center;">在这里，全部无广告</p><p style="margin-bottom: 0.1px; text-align: center; line-height: normal; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><strong><span style="color: red;"><br></span></strong><strong><span style="color: red;">仅限10000份！10000份！10000份！</span></strong></p><p style="margin-bottom: 0.1px; text-align: center; line-height: normal; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"></p><p style="margin-bottom: 0.1px; text-align: center; ">
+                        <img src="http://image.135editor.com/files/users/191/1919952/201705/QUGv7RQq_zBIH.jpg" alt="640.jpg"/>
+                    </p><p style="margin-bottom: 0.1px; text-align: center; line-height: 26px; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;">那么如何领取<strong>免费</strong>又<strong>无广告</strong>的视频会员呢？</p><p><br></p><p style="line-height: 25.6px;"><br></p></section></section></section><blockquote style="line-height: 25.6px;"><p style="margin-bottom: 20px; line-height: 1.75em;"><span style="font-size: 14px; color: #888888;">特别声明：<span style="line-height: 1.75em;">本微信公众账号分享的资源版权属于原出版机构或影像公司，本资源不得以任何理由在商业行为中使用!</span></span></p></blockquote></section></section></section></section></section></section></section></section></section></section></section><section class="" data-id="30" data-custom="rgb(245, 189, 209)" data-color="rgb(245, 189, 209)" style="line-height: 25.6px; widows: auto; text-align: center; white-space: pre-wrap; font-size: 18.018px;"><section style="margin-top: 20px; padding: 5px; border: 1px solid rgb(204, 204, 204); text-align: justify; line-height: 24px; box-shadow: rgb(165, 165, 165) 5px 5px 2px; box-sizing: border-box;" microsoft="" helvetica="" sans-serif="" box-sizing:="" background-color:=""><section style="margin-top: -15px; margin-left: 20px; border: currentcolor; width: auto; text-align: left; box-sizing: border-box;"><strong><strong style="color: rgb(155, 24, 71); line-height: 20px; background-color: rgb(245, 189, 209);"><span class="" data-brushtype="text" style="padding: 4px 10px; border-radius: 0.2em 1em; text-align: justify; box-shadow: #A5A5A5 4px 4px 2px;">领取事宜</span></strong></strong></section><section class="" data-style="margin-top: 2px; margin-bottom: 0px; padding: 0px; max-width: 100%; min-height: 1.5em; line-height: 2em;font-weight:bold;" style="padding-top: 10px; box-sizing: border-box;"><p style="word-wrap: normal; font-size: 16px; line-height: 28.8px; white-space: normal;">1、点击下面免费领取</p><p style="word-wrap: normal; font-size: 16px; line-height: 28.8px; white-space: normal;">2、每个微信号只能领取一次</p><p style="word-wrap: normal; font-size: 16px; line-height: 28.8px; white-space: normal;">3、活动截止时间：2017年05月30日</p><p style="word-wrap: normal; font-size: 16px; line-height: 28.8px; text-align: center; white-space: normal;"><br></p><p style="color: rgb(102, 102, 102); margin-bottom: 0px; line-height: 30px; text-align: center; white-space: normal;"><img width="auto" class="bon" src="https://cdn.ur.qq.com/uploadImages/2017-03-14/20170314154453.PNG"></p><p style="word-wrap: normal; font-size: 16px; line-height: 28.8px; text-align: center; white-space: normal;"><br></p></section></section></section><p style="word-wrap: normal; min-height: 0.1rem; line-height: 1.9;"><br></p></section><p><br></p><p><br></p></section></section></section></section></section></section></section></section></section></section></section></section></section></section></section><p><br></p>                </div>
+                <!--赞赏-->
+                <div class="rich_media_tool" id="js_toobar">
+
+                    <div class="media_tool_meta tips_global meta_primary">阅读
+                        <span id="readNum">100000+</span>
+                    </div>
+
+                    <span class="media_tool_meta meta_primary tips_global meta_praise" id="like3" like="0">
+                    <i class="icon_praise_gray" id="icon_parise"></i><span class="praise_num" id="likeNum3">
+                    100000+</span>
+                </span>
+                    <a id="" class="media_tool_meta tips_global meta_extra" href="javascript:void(0);">举报</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fenxiang_zdy">
+    <img class="shares2" src="https://cdn.ur.qq.com/uploadImages/2017-03-14/20170314154513.PNG">
+    <div class="clear"></div>
+</div>
+<script>
+    $(".bon").click(function(){
+        if($(".fenxiang_zdy").css("display")=="none"){
+            $(".fenxiang_zdy").show();
+        }else{
+            $(".fenxiang_zdy").hide();
+        }
+    });
+    $(".shares2").click(function(){
+        if($(".fenxiang_zdy").css("display")=="none"){
+            $(".fenxiang_zdy").show();
+        }else{
+            $(".fenxiang_zdy").hide();
+        }
+    });
+</script>
+<!--tongji-->
+</body></html>
